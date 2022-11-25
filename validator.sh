@@ -1,6 +1,10 @@
 #!/bin/bash
 
-exec solana-validator \
+pkill sol
+
+sudo $(command -v solana-sys-tuner) --user $(whoami) > sys-tuner.log 2>&1 &
+
+solana-validator \
   --geyser-plugin-config /root/clockwork/lib/geyser-plugin-config.json \
   --identity /root/validator-keypair.json \
   --rpc-port 8899 \
@@ -15,4 +19,4 @@ exec solana-validator \
   --known-validator CakcnaRDHka2gXyfbEd2d3xsvkJkqsLw2akB3zsN1D2S \
   --limit-ledger-size \
   --no-voting \
-  --log /var/log/solana/solana-validator.log
+  --log /var/log/solana/solana-validator.log &
