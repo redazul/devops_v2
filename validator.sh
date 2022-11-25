@@ -1,11 +1,5 @@
 #!/bin/bash
 
-pkill sol
-
-export SOLANA_METRICS_CONFIG="host=https://metrics.solana.com:8086,db=mainnet-beta,u=mainnet-beta_write,p=password"
-
-sudo $(command -v solana-sys-tuner) --user $(whoami) > sys-tuner.log 2>&1 &
-
 exec solana-validator \
   --geyser-plugin-config /root/clockwork/lib/geyser-plugin-config.json \
   --identity /root/validator-keypair.json \
