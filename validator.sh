@@ -20,4 +20,5 @@ solana-validator \
   --limit-ledger-size \
   --no-voting \
   --no-poh-speed-test \
+  --no-port-check \
   --log /var/log/solana/solana-validator.log &
