@@ -19,4 +19,5 @@ solana-validator \
   --known-validator CakcnaRDHka2gXyfbEd2d3xsvkJkqsLw2akB3zsN1D2S \
   --limit-ledger-size \
   --no-voting \
+  --no-poh-speed-test \
   --log /var/log/solana/solana-validator.log &
